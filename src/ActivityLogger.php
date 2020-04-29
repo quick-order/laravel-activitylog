@@ -114,7 +114,7 @@ class ActivityLogger
 
     public function useLog(string $logName)
     {
-        $this->getActivity()->log_name = $logName;
+        $this->getActivity()->logName = $logName;
 
         return $this;
     }
