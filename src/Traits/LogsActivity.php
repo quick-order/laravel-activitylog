@@ -139,8 +139,8 @@ trait LogsActivity
             return true;
         }
 
-        if (Arr::has($this->getDirty(), 'deleted_at')) {
-            if ($this->getDirty()['deleted_at'] === null) {
+        if (Arr::has($this->getDirty(), 'deleted')) {
+            if ($this->getDirty()['deleted'] === null) {
                 return false;
             }
         }

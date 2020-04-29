@@ -36,7 +36,7 @@ class Activity extends Model implements ActivityContract
             return $this->morphTo()->withTrashed();
         }
 
-        return $this->morphTo();
+	    return $this->morphTo('subject', 'subjectType', 'subjectID', 'subjectID');
     }
 
     public function causer(): MorphTo
@@ -85,4 +85,7 @@ class Activity extends Model implements ActivityContract
             ->where('subjectType', $subject->getMorphClass())
             ->where('subjectID', $subject->getKey());
     }
+
+    const CREATED_AT    = 'created';
+    const UPDATED_AT    =  'updated';
 }

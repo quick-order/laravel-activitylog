@@ -107,7 +107,7 @@ class ActivityLogger
 
     public function createdAt(Carbon $dateTime)
     {
-        $this->getActivity()->created_at = $dateTime;
+        $this->getActivity()->created = $dateTime;
 
         return $this;
     }
