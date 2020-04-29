@@ -33,10 +33,10 @@ class Activity extends Model implements ActivityContract
     public function subject(): MorphTo
     {
         if (config('activitylog.subject_returns_soft_deleted_models')) {
-            return $this->morphTo('subject', 'subjectType', 'subjectID', 'subjectID')->withTrashed();
+            return $this->morphTo('subject', 'subjectType', 'subjectID', 'id')->withTrashed();
         }
 
-	    return $this->morphTo('subject', 'subjectType', 'subjectID', 'subjectID');
+	    return $this->morphTo('subject', 'subjectType', 'subjectID', 'id');
     }
 
     public function causer(): MorphTo
