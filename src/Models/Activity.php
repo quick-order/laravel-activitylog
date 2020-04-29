@@ -41,7 +41,7 @@ class Activity extends Model implements ActivityContract
 
     public function causer(): MorphTo
     {
-        return $this->morphTo();
+	    return $this->morphTo('causer', 'causerType', 'causerID', 'causerID');
     }
 
     public function getExtraProperty(string $propertyName)
