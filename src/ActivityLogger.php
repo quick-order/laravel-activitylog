@@ -80,8 +80,8 @@ class ActivityLogger
 
     public function causedByAnonymous()
     {
-        $this->activity->causer_id = null;
-        $this->activity->causer_type = null;
+        $this->activity->causerID = null;
+        $this->activity->causerType = null;
 
         return $this;
     }

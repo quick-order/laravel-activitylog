@@ -69,20 +69,20 @@ class Activity extends Model implements ActivityContract
             $logNames = $logNames[0];
         }
 
-        return $query->whereIn('log_name', $logNames);
+        return $query->whereIn('logName', $logNames);
     }
 
     public function scopeCausedBy(Builder $query, Model $causer): Builder
     {
         return $query
-            ->where('causer_type', $causer->getMorphClass())
-            ->where('causer_id', $causer->getKey());
+            ->where('causerType', $causer->getMorphClass())
+            ->where('causerID', $causer->getKey());
     }
 
     public function scopeForSubject(Builder $query, Model $subject): Builder
     {
         return $query
-            ->where('subject_type', $subject->getMorphClass())
-            ->where('subject_id', $subject->getKey());
+            ->where('subjectType', $subject->getMorphClass())
+            ->where('subjectID', $subject->getKey());
     }
 }
